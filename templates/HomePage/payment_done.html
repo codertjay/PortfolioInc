@@ -1,0 +1,102 @@
+{% extends 'HomePage/base/home_base.html' %}
+{% load static %}
+{% block style %}
+
+{% endblock %}
+
+{% block title %}
+    Payment Successful
+{% endblock %}
+{% block content %}
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs" style="background-image:url({% static 'HomePage/img/breadcrumbs.jpg' %})">
+        <div class="container">
+            <div class="row">
+                <!-- Breadcrumbs-Content -->
+                <div class="col-lg-7 col-md-7 col-12">
+                    <div class="breadcrumbs-content">
+                        <h2>Payment Successful</h2>
+                        <p>You have successfully made payment
+                            for {{ membership_subscription.membership.membership_type }} membership.</p>
+                    </div>
+                </div>
+                <!-- Breadcrumbs-Menu -->
+                <div class="col-lg-5 col-md-5 col-12">
+                    <div class="breadcrumbs-menu">
+                        <ul>
+                            <li><a href="{% url 'home_page:home' %}">Home</a><i class="fa fa-angle-double-right"></i>
+                            </li>
+                            <li class="active"><a href="#">Payment Successful</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    <!-- Start Mail Success-->
+    <section class="success page" style="padding: 50px ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="mail">
+                        <h2>Payment was <span>Successful</span></h2>
+                        <p>We have received your payment, You now have access to all contents on our website .
+                            Please wait. Thank you :)</p>
+                        <a class="theme-btn" href="{% url 'profile:dashboard' %}"><i class="fa fa-long-arrow-left"></i>Go
+                            Back to dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ End Mail Success -->
+{% endblock %}
+
+{% comment %}
+
+{'status': True, 'message': 'Verification successful',
+
+ 'data': {'id': 1036773398, 'domain': 'test', 'status': 'success', 'reference': 'T985946375823995', 'amount': 10000000, 'message': N
+one, 'gateway_response': 'Successful', 'paid_at': '2021-03-12T19:55:10.000Z', 'created_at': '2021-03-12T19:54:50.000Z', 'channel': 'card', 'currency': 'NGN', 'ip_address': '197.210.54.80
+', 'metadata': {'referrer': 'http://www.localhost:8000/payment/%23/Professional/'}, 'log': {'start_time': 1615578887, 'time_spent': 20, 'attempts': 1, 'errors': 0, 'success': True, 'mobi
+le': False, 'input': [], 'history': [{'type': 'action', 'message': 'Attempted to pay with card', 'time': 19}, {'type': 'success', 'message': 'Successfully paid with card', 'time': 20}]},
+ 'fees': 160000, 'fees_split': None, 'authorization': {'authorization_code': 'AUTH_87ba6pdpqn', 'bin': '408408', 'last4': '4081', 'exp_month': '12', 'exp_year': '2030', 'channel': 'card'
+, 'card_type': 'visa ', 'bank': 'TEST BANK', 'country_code': 'NG', 'brand': 'visa', 'reusable': True, 'signature': 'SIG_OzArXB7DxBlOEkUV0Bjn', 'account_name': None, 'receiver_bank_accoun
+t_number': None, 'receiver_bank': None},
+
+ 'customer': {'id': 41032986, 'first_name': '', 'last_name': '', 'email': 'codertjay@gmail.com', 'customer_code': 'CUS_l31zbhczbxgqadb', 'phone':
+'', 'metadata': None, 'risk_action': 'default', 'international_format_phone': None},
+
+'plan': 'PLN_g8i2xsu4xuyqs5m', 'split': {}, 'order_id': None, 'paidAt': '2021-03-12T19:55:10.000Z', '
+createdAt': '2021-03-12T19:54:50.000Z', 'requested_amount': 10000000,
+'pos_transaction_data': None, 'transaction_date':
+'2021-03-12T19:54:50.000Z', 'plan_object':
+
+{'id': 104254, 'name':
+'Professional', 'plan_code': 'PLN_g8i2xsu4xuyqs5m', 'description': 'professional plan', 'amount': 10000000, 'interval': 'annually', 'send_invoices': True, 'send_sms': True, 'currency': '
+NGN'}, 'subaccount': {}}
+
+
+
+
+
+
+
+
+
+
+
+
+{'status': True, 'message': 'Customers retrieved',
+'data': [{'integration': 591175, 'first_name': 'first_name', 'last_name': 'last_nam_fffddde', 'email': 'codedrtjay@gmail.com', 'phone':
+ 'phone', 'metadata': {}, 'domain': 'test', 'customer_code': 'CUS_yfm48m3pu5vxbbl', 'risk_action': 'default', 'id': 41089843, 'createdAt': '2021-03-13T19:22:02.000Z', 'updatedAt': '2021-
+03-13T19:23:29.000Z'},
+
+{'integration': 591175, 'first_name': 'first_name', 'last_name': 'last_name', 'email': 'codertjay@gmail.com', 'phone': '', 'metadata': None, 'domain': 'test', 'cus
+tomer_code': 'CUS_l31zbhczbxgqadb', 'risk_action': 'default', 'id': 41032986, 'createdAt': '2021-03-12T19:38:47.000Z', 'updatedAt': '2021-03-13T19:17:30.000Z'}, {'integration': 591175, '
+first_name': '', 'last_name': '', 'email': 'customer@email.com', 'phone': '', 'metadata': None, 'domain': 'test', 'customer_code': 'CUS_qmjpnxtxdpi5pwf', 'risk_action': 'default', 'id':
+41032722, 'createdAt': '2021-03-12T19:33:14.000Z', 'updatedAt': '2021-03-12T19:33:14.000Z'}], 'meta': {'total': 3, 'skipped': 0, 'perPage': 50, 'page': 1, 'pageCount': 1}}
+{% endcomment %}

@@ -1,0 +1,46 @@
+{#{% extends 'Homepage/base/home_base.html' %}#}
+{% load static %}
+<!-- Breadcrumbs -->
+
+
+
+
+{% block title %}
+Service
+{% endblock %}
+{% block service %} active {% endblock  %}
+{% block content %}
+    <div class="breadcrumbs" style="background-image:url('{% static 'HomePage/img/breadcrumbs.jpg' %}')">
+        <div class="container">
+            <div class="row">
+                <!-- Breadcrumbs-Content -->
+                <div class="col-lg-7 col-md-7 col-12">
+                    <div class="breadcrumbs-content">
+                        <h2>Services</h2>
+                        <p>with the service we provide you can contact us to get more.</p>
+                    </div>
+                </div>
+                <!-- Breadcrumbs-Menu -->
+                <div class="col-lg-5 col-md-5 col-12">
+                    <div class="breadcrumbs-menu">
+                        <ul>
+                            <li><a href="{% url 'home_page:home' %}">Home</a><i class="fa fa-angle-double-right"></i>
+                            </li>
+                            <li class="active"><a href="#">Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    {% comment %} service include{% endcomment %}
+    {% include 'HomePage/include/service_include.html' %}
+    {% comment %} end of service include{% endcomment %}
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

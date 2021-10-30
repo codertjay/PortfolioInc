@@ -1,0 +1,59 @@
+{% extends 'HomePage/base/home_base.html' %}
+{% load static %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block title %}
+Contact || PortfolioInc
+{% endblock %}
+{% block contact %} active {% endblock  %}
+
+{% block content %}
+    <section class="breadcrumbs" style="background-image:url({% static 'HomePage/img/contact-bg.jpg' %})">
+        <div class="container">
+            <div class="row">
+                <!-- Breadcrumbs-Content -->
+                <div class="col-lg-7 col-md-7 col-12">
+                    <div class="breadcrumbs-content">
+                        <h2>Contact</h2>
+                        <p>Contact us if you have any complaint or idea .</p>
+                    </div>
+                </div>
+                <!-- Breadcrumbs-Menu -->
+                <div class="col-lg-5 col-md-5 col-12">
+                    <div class="breadcrumbs-menu">
+                        <ul>
+                            <li><a href="{% url 'home_page:home' %}">Home</a><i class="fa fa-angle-double-right"></i>
+                            </li>
+                            <li class="active"><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Breadcrumbs -->
+
+
+    {% comment %} begin contact{% endcomment %}
+    {% include 'HomePage/include/contact_include.html' %}
+    {% comment %} end conatct{% endcomment %}
+    <!-- Google-Maps -->
+    <div class="maps-area">
+        <div class="main-maps">
+            <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=new%20york&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <a href="https://www.whatismyip-address.com/divi-discount/"></a>
+        </div>
+    </div>
+    <!-- End-Google-Maps -->
+
+
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

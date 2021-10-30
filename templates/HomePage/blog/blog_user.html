@@ -1,0 +1,130 @@
+{% extends 'HomePage/base/home_base.html' %}
+{% load static %}
+
+{% block style %}
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8515488467518904"
+            crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block title %}
+    Blog
+{% endblock %}
+
+{% block content %}
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs" style="background-image:url('{% static "HomePage/img/breadcrumbs.jpg" %}')">
+        <div class="container">
+            <div class="row">
+                <!-- Breadcrumbs-Content -->
+                <div class="col-lg-7 col-md-7 col-12">
+                    <div class="breadcrumbs-content">
+                        <h2>Blog Area</h2>
+                        <p>List of articles from {{ user.first_name }} {{ user.last_name }}</p>
+                    </div>
+                </div>
+                <!-- Breadcrumbs-Menu -->
+                <div class="col-lg-5 col-md-5 col-12">
+                    <div class="breadcrumbs-menu">
+                        <ul>
+                            <li><a href="{% url 'home_page:home' %}">Home</a><i class="fa fa-angle-double-right"></i>
+                            </li>
+                            <li class="active"><a href="#">Blog </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    <!-- Blog Archive -->
+    <section id="blogs" class="blog-area archive">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-12">
+                    <div class="row">
+                        {% for item in post %}
+
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <!-- Single Blog -->
+                                <div class="single-blog" style="height: 50vh">
+                                    <div class="blog-img">
+                                        <img src="{{ item.imageURL }}" alt="#">
+                                        <span class="date">{{ item.timestamp|date }}</span>
+                                    </div>
+                                    <div class="blog-body">
+                                        <h3><a href="{% url 'blog:blog_detail' item.slug %}">{{ item.title|title }}</a>
+                                        </h3>
+                                        <div class="blog-meta">
+                                            <div class="single-meta">
+                                                <img src="{{ item.user.layout.profilePicsImageURL }}" alt="#">
+                                                <p>{{ item.user.first_name }}</p>
+                                            </div>
+                                            <div class="single-meta">
+                                                <p><i class="fa fa-comments"></i> <span>{{ item.comments.count }} comments</span>
+                                                </p>
+                                            </div>
+                                            <div class="single-meta">
+                                                <p><i class="fa fa-star"></i> <span>{{ item.view_count }}</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Blog -->
+                            </div>
+                        {% endfor %}
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Start Pagination -->
+                            <div class="bonik-pagination-main">
+                                {% if post.paginator %}
+                                    <ul class="bonik-pagination">
+                                        {% if post.has_previous %}
+                                            <li class="prev"><a href="?page={{ post.previous_page_number }}"><i
+                                                    class="fa fa-long-arrow-left"></i></a></li>
+                                        {% else %}
+                                            <li class="prev disabled"><a href="#"><i
+                                                    class="fa fa-long-arrow-left"></i></a></li>
+                                        {% endif %}
+                                        {% for i in post.paginator.page_range %}
+                                            {% if post.number == i %}
+                                                <li class="active"><a href="#">{{ i }}</a></li>
+                                            {% else %}
+                                                <li class="active"><a href="?page={{ i }}">{{ i }}</a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                        {% if post.has_next %}
+                                            <li class="next"><a href="?page={{ post.next_page_number }}"><i
+                                                    class="fa fa-long-arrow-right"></i></a></li>
+                                        {% else %}
+                                            <li class="next"><a href="#"><i
+                                                    class="fa fa-long-arrow-right"></i></a></li>
+
+                                        {% endif %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                            <!--/ End Pagination -->
+                        </div>
+                    </div>
+                </div>
+
+                {% comment %} beginng of side bar{% endcomment %}
+
+                {% include 'HomePage/blog/blog_sidebar.html' %}
+                {% comment %}end of side bar{% endcomment %}
+            </div>
+        </div>
+    </section>
+    <!-- End Blog Archive -->
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}
+

@@ -1,0 +1,193 @@
+{% extends 'HomePage/base/home_base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+
+
+{% block style %}
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8515488467518904"
+            crossorigin="anonymous"></script>
+{% endblock %}
+
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs" style="background-image:url({% static  'HomePage/img/breadcrumbs.jpg' %})">
+        <div class="container">
+            <div class="row">
+                <!-- Breadcrumbs-Content -->
+                <div class="col-lg-7 col-md-7 col-12">
+                    <div class="breadcrumbs-content">
+                        <h2>Article Detail</h2>
+                        <p class="text-capitalize">{{ post.title }}.</p>
+                    </div>
+                </div>
+                <!-- Breadcrumbs-Menu -->
+                <div class="col-lg-5 col-md-5 col-12">
+                    <div class="breadcrumbs-menu">
+                        <ul>
+                            <li><a href="{% url 'home_page:home' %}">Home</a><i class="fa fa-angle-double-right"></i>
+                            </li>
+                            <li class="active"><a href="blog-single.html">Blog Detail</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    <!-- Blogs-Single-Area -->
+    <section class="blog-single-post section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-12">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="single-area">
+                                <!-- Blog Head -->
+                                <div class="single-head">
+                                    <img src="{{ post.imageURL }}" alt="#">
+                                    <div class="blog-title-meta">
+                                        <!-- Blog Meta -->
+                                        <div class="blog-meta">
+                                            <span><i class="fa fa-user"></i><a
+                                                    href="#">By {{ post.user.first_name }} {{ post.user.last_name }}</a></span>
+                                            <span><i class="fa fa-calendar"></i>{{ post.timestamp|date }}</span>
+                                            <span><i
+                                                    class="fa fa-comments"></i>{{ post.comments.count }} comments</span>
+
+                                            {% if request.user == post.user or request.user.is_superuser %}
+
+                                                <span> <a href="{% url 'blog:update_post' post.slug %}"><i
+                                                        class="fa fa-edit "></i>Edit</a></span>
+                                                <span> <a href="{% url 'blog:delete_post' post.slug %}"> <i
+                                                        class="fa fa-close text-danger"></i>Delete</a></span>
+
+                                            {% endif %}
+
+                                        </div>
+                                        <h1>{{ post.title|title }}.</h1>
+                                    </div>
+                                </div>
+                                <!-- Blog Content -->
+                                <div class="single-content">
+                                    <p>{{ post.get_markdown }}</p>
+                                    <!-- Blog Post Tag -->
+                                    <div class="blog-post-tag">
+                                        <div class="row">
+
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <div class="blog-share share-tag">
+                                                    <h5>Share Now</h5>
+                                                    <ul>
+                                                        <li><a href="{{ facebook_url }}"><i class="fab fa-facebook"></i></a>
+                                                        </li>
+                                                        <li><a href="{{ twitter_url }}"><i
+                                                                class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="{{ linkedin_url }}"><i class="fa fa-linkedin"></i></a>
+                                                        </li>
+                                                        <li><a href="{{ instagram_url }}"><i
+                                                                class="fab fa-instagram"></i></a></li>
+
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- Author -->
+                                <div class="post-author-box">
+                                    <div class="author-img">
+                                        <img src="{{ post.user.layout.profilePicsImageURL }}" alt="#">
+                                    </div>
+                                    <div class="author-content">
+                                        <h3>{{ post.user.first_name }} - {{ post.user.last_name }}</h3>
+                                        <p>{{ post.profile.about|truncatewords:20 }}. </p>
+                                    </div>
+                                    <div class="author-social">
+                                        <ul>
+                                            <li><a href="{{ facebook_url }}"><i class="fab fa-facebook"></i></a></li>
+                                            <li><a href="{{ twitter_url }}"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="{{ instagram_url }}"><i class="fab fa-linkedin"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- End-Author -->
+                                <!-- Blog Comments -->
+                                <div class="blog-comments">
+                                    <div class="bottom-title">
+                                        <h2>Total <span>({{ post.comments.count }})</span> comments</h2>
+                                    </div>
+                                    <div class="comments-body">
+                                        {% for item in post.comments %}
+                                            <!-- Single Comments -->
+                                            <div class="single-comments">
+                                                <div class="main">
+                                                    <div class="head">
+                                                        <img src="{{ item.user.layout.profilePicsImageURL }}" alt="#"/>
+                                                    </div>
+                                                    <div class="body">
+                                                        <h4> {{ post.user.first_name }} {{ post.user.last_name }} <span
+                                                                class="meta">{{ item.timestamp|timesince }}</span></h4>
+                                                        <p class="">{{ item.content }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <!--/ End Single Comments -->
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+                                <!--/ End Blog Comments -->
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <!-- Comments Form -->
+                            <div class="blog-c-form">
+                                <div class="bottom-title">
+                                    <h2>Post Comments</h2>
+                                </div>
+                                <!-- Comment Form -->
+                                <form class="form" method="post" action="{% url 'blog:blog_comment' post.slug %}">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                            {{ form.content|as_crispy_field }}
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group button">
+                                                <button type="submit" class="theme-btn">Post Comment</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!--/ End Comment Form -->
+                            </div>
+                            <!--/ End Comments Form -->
+                        </div>
+                    </div>
+                </div>
+
+                {% comment %} beginng of side bar{% endcomment %}
+
+                {% include 'HomePage/blog/blog_sidebar.html' %}
+                {% comment %}end of side bar{% endcomment %}
+            </div>
+        </div>
+    </section>
+    <!--/ End Blogs Area -->
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

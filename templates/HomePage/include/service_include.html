@@ -1,0 +1,43 @@
+<!-- Service Area -->
+<section class="service-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
+                <div class="section-title">
+                    <h6>Services</h6>
+                    <h3>Our Services</h3>
+                    <div class="line-bot"></div>
+                    <p>List of services we render.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for item in service %}
+                <!-- Single Service -->
+                <div class="col-lg-4 col-md-4 col-12 wow fadeInUp" data-wow-duration="2s">
+                    <div class="single-service">
+                        <!-- Number -->
+                        <div class="number last"><h6>{{ forloop.counter }}</h6></div>
+                        <div class="service-head">
+                            <div class="service-img">
+                                <img src="{{ item.imageURL }}" alt="#" height="100" width="120">
+                                <i class="fa fa-lightbulb-o"></i>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h4>{{ item.name }}</h4>
+                            <p>{{ item.info }}. </p>
+                        </div>
+                        <div class="service-bottom">
+                            <a href="{% url 'home_page:contact' %}"><i class="fa fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Service -->
+            {% endfor %}
+
+
+        </div>
+    </div>
+</section>
+<!-- End Service Area -->

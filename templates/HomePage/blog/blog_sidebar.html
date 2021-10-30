@@ -1,0 +1,60 @@
+{% load static %}
+<div class="col-lg-4 col-12">
+    <!-- Blog Sidebar -->
+    <div class="blog-sidebar">
+        <!-- Search Widget -->
+        <div class="widget widget-search">
+            <h4 class="widget-title">Search Objects</h4>
+            <form action="{% url 'blog:blog_list' %}">
+                <input type="text" name="q" placeholder="Search your keyword...">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <!-- Popular Post Widget -->
+        <div class="widget popular-feeds">
+            <h4 class="widget-title">Latest Articles</h4>
+            <div class="popular-feed-loop">
+                {% for post in latest_posts %}
+                    <!-- Single Popular -->
+                    <div class="single-popular-feed">
+                        <div class="feed-img">
+                            <img src="{{ post.imageURL }}" alt="#">
+                        </div>
+                        <div class="feed-desc">
+                            <h6><a href="{% url 'blog:blog_detail' post.slug %}">{{ post.title|title }}</a></h6>
+                            <span class="time"><i class="fa fa-calendar"></i> {{ post.timestamp|date }}</span>
+                        </div>
+                    </div>
+                    <!-- End Single Popular -->
+                {% endfor %}
+            </div>
+        </div>
+        <!-- Categories Widget -->
+        <div class="widget categories-widget">
+            <h5 class="widget-title">Categories</h5>
+            <ul>
+                {% for item in blogCategory %}
+                    <li><a href="{% url 'blog:blog_list' %}?q={{ item|first }}">{{ item|last }}<span></span></a></li>
+                {% endfor %}
+
+            </ul>
+        </div>
+        <!-- Social Icon Widget -->
+        <div class="widget socail-widget">
+            <h4 class="widget-title">Never Miss News</h4>
+            <ul>
+                <li><a href="{{ facebook_url }}"><i class="fa fa-facebook-f"></i></a></li>
+                <li><a href="{{ twitter_url }}"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="{{ dribble_url }}"><i class="fa fa-dribbble"></i></a></li>
+                <li><a href="{{ linkedin_url }}"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+
+
+        <div class="widget banner-ad-widget">
+            <img src="{% static 'HomePage/img/sidebar-banner.png' %}" alt="#">
+        </div>
+    </div>
+    <!-- End Blog Sidebar -->
+</div>
+

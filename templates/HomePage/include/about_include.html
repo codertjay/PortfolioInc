@@ -1,0 +1,54 @@
+{% load static %}
+    <!-- About Area -->
+    <section class="about-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-12 wow fadeInLeft" data-wow-duration="1s">
+                    <!-- About image -->
+                    <div class="about-img">
+                        <img src="{% static 'HomePage/img/about-img.jpg' %}" alt="#">
+                        <div class="activity"><span>500+</span> Templates</div>
+                    </div>
+                    <!-- End About image -->
+                </div>
+                <div class="col-lg-6 col-md-6 col-12 wow fadeInRight" data-wow-duration="2s">
+                    <!-- About content -->
+                    <div class="about-content">
+                        <span>About company</span>
+                        <h2>More Than <b>500</b> Templates, We Provide Business Solutions.</h2>
+                        <p> {{ website_name }} is a web that
+                            enable you
+                            to create
+                            your
+                            portfolio without stress you dont need to pay
+                            before getting you subdomain we provide you every thing you need as a graphics designer. we
+                            provide you with colors to pick and make your
+                            web site more dynamic </p>
+                        <div class="feature">
+                            <!-- Single Feature -->
+                            <div class="single-feature">
+                                <i class="fa fa-briefcase"></i>
+                                <div class="feature-content">
+                                    <h3>Smart Business Solutions!</h3>
+                                    <p>We provide you all fields that you will ever ask for to create your portfolio</p>
+                                </div>
+                            </div>
+                            <!-- Single Feature -->
+                            <div class="single-feature">
+                                <i class="fa fa-code"></i>
+                                <div class="feature-content">
+                                    <h3>Quality Coding & Best Service</h3>
+                                    <p>We provide you with the best templates and good server to make your website experience great</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-theme-btn">
+                            <a href="{% url 'home_page:about' %}" class="theme-btn">More about us</a>
+                        </div>
+                    </div>
+                    <!-- End About content -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Area -->

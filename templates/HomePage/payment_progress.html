@@ -1,0 +1,94 @@
+{% extends 'HomePage/base/home_base.html' %}
+{% load static %}
+
+
+{% block title %}
+    Payment || PortfolioInc
+{% endblock %}
+{% block payment %} active {% endblock %}
+{% block content %}
+    <div class="breadcrumbs" style="background-image:url('{% static 'HomePage/img/breadcrumbs.jpg' %}')">
+        <div class="container">
+            <div class="row">
+                <!-- Breadcrumbs-Content -->
+                <div class="col-lg-7 col-md-7 col-12">
+                    <div class="breadcrumbs-content">
+                        <h2>Payment</h2>
+                        <p>Pay to get the best service we provide.</p>
+                    </div>
+                </div>
+                <!-- Breadcrumbs-Menu -->
+                <div class="col-lg-5 col-md-5 col-12">
+                    <div class="breadcrumbs-menu">
+                        <ul>
+                            <li><a href="{% url 'home_page:home' %}">Home</a><i class="fa fa-angle-double-right"></i>
+                            </li>
+                            <li class="active"><a href="#">payment</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    <!-- Service Area -->
+    <section class="service-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
+                    <div class="section-title">
+                        <h6> Payment</h6>
+                        <div class="line-bot"></div>
+                        <p>Make payment to get access to all templates .</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 mx-auto align-content-center justify-content-center">
+                    <div class="single-pricing active p-5 ">
+                        <div class="pricing-head">
+                            <h4>{{ membership_type.membership_type }}</h4>
+                            <div class="sticker mt-5 mr-5 ml-5" style="right: -20px;">
+                                <span>{{ membership_type.membership_type }} plan</span>
+                            </div>
+                        </div>
+                        <div class="pricing-middle">
+                            <div class="circle-box">
+                                <div class="price">
+                                    <h2>${{ membership_type.price }}</h2>
+                                    <p>{{ membership_type.membership_type }}</p>
+                                </div>
+                            </div>
+                            <ul class="price-list">
+                                <li>Social Media Marketing</li>
+                                <li>3.100 Keywords</li>
+                                <li>One Way Link Building</li>
+                                <li>10 Free Optimization</li>
+                                <li>5 Press Releases</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-bottom">
+                            <form action="{% url 'membership:payment_done' %}" method="POST" class="align-self-center">
+                                {% csrf_token %}
+                                <script
+                                        src="https://js.paystack.co/v1/inline.js"
+                                        data-key="{{ paystack_public_key }}"
+                                        data-email="{{ request.user.email }}"
+                                        data-first_name="{{ request.user.first_name }}"
+                                        data-last_name="{{ request.user.last_name }}"
+                                        data-currency="USD"
+                                        data-plan="{{ membership_type.membership_plan_id }}">
+                                </script>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Service Area -->
+
+
+{% endblock %}

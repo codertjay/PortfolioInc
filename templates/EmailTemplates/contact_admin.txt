@@ -1,0 +1,14 @@
+This message is from Dynamic porfolio (www.dypt.com)
+
+
+Contact name:
+    {{contact_nam}}
+
+Email:
+    {{contact_email}}
+<a
+subject:
+    {{contact_subject}}
+
+description:
+    {{contact_description}}

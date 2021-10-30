@@ -1,0 +1,341 @@
+{% extends 'HomePage/base/home_base.html' %}
+{% load static %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block title %}
+    Home || PortfolioInc
+{% endblock %}
+{% block home %} active {% endblock %}
+{% block content %}
+    <!-- Hero Area -->
+    <section class="hero-area">
+        <div class="hero-slider">
+            <!-- Single Slider -->
+            <div class="single-slider" style="background-image:url('{% static "HomePage/img/carousel_image1.jpg" %}')">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-8 col-12">
+                            <div class="hero-content">
+                                <h1 class="text-capitalize text-light">The Best Solutions to Start Your Own
+                                    Business</h1>
+                                <p class="text-capitalize text-light">Create your portfolio now for free with our free
+                                    plans and
+                                    become a website owner</p>
+                                <!-- Slider Button -->
+                                <div class="button">
+                                    <a href="#" class="theme-btn">Get Started</a>
+                                    <div class="video-main">
+                                        <!-- Promo-Video -->
+                                        <div class="promo-video">
+                                            <div class="waves-block">
+                                                <div class="waves wave-1"></div>
+                                                <div class="waves wave-2"></div>
+                                                <div class="waves wave-3"></div>
+                                            </div>
+                                        </div>
+                                        <a href="https://www.youtube.com/watch?v=m_IqCPs6u8Y"
+                                           class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
+                                    </div>
+                                </div>
+                                <!-- End Slider Button -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Slider -->
+            <!-- Single Slider -->
+            <div class="single-slider" style="background-image:url('{% static 'HomePage/img/carousel_image2.jpg' %}')">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-8 col-12">
+                            <div class="hero-content">
+                                <h1 class="text-capitalize">The best place to start your business</h1>
+                                <p class="text-capitalize">We provide SEO (Search Engine Optimisation) for your
+                                    website</p>
+                                <!-- Slider Button -->
+                                <div class="button">
+                                    <a href="#" class="theme-btn">Get Started</a>
+                                    <div class="video-main">
+                                        <!-- Promo-Video -->
+                                        <div class="promo-video">
+                                            <div class="waves-block">
+                                                <div class="waves wave-1"></div>
+                                                <div class="waves wave-2"></div>
+                                                <div class="waves wave-3"></div>
+                                            </div>
+                                        </div>
+                                        <a href="https://www.youtube.com/watch?v=m_IqCPs6u8Y"
+                                           class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
+                                    </div>
+                                </div>
+                                <!-- End Slider Button -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Slider -->
+            <!-- Single Slider -->
+            <div class="single-slider" style="background-image:url('{% static 'HomePage/img/carousel_image3.jpg' %}')">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-8 col-12">
+                            <div class="hero-content">
+                                <h1 class="text-capitalize text-light">We provide website for any type of business.</h1>
+                                <p class="text-capitalize text-light">Get your own website and choose from our
+                                    templates</p>
+                                <!-- Slider Button -->
+                                <div class="button">
+                                    <a href="#" class="theme-btn">Get Started</a>
+                                    <div class="video-main">
+                                        <!-- Promo-Video -->
+                                        <div class="promo-video">
+                                            <div class="waves-block">
+                                                <div class="waves wave-1"></div>
+                                                <div class="waves wave-2"></div>
+                                                <div class="waves wave-3"></div>
+                                            </div>
+                                        </div>
+                                        <a href="https://www.youtube.com/watch?v=m_IqCPs6u8Y"
+                                           class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
+                                    </div>
+                                </div>
+                                <!-- End Slider Button -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Slider -->
+        </div>
+    </section>
+    <!-- End Hero Area -->
+
+
+    {% comment %} about include{% endcomment %}
+    {% include 'HomePage/include/about_include.html' %}
+    {% comment %} end of about include{% endcomment %}
+
+    {% comment %} service include{% endcomment %}
+    {% include 'HomePage/include/service_include.html' %}
+    {% comment %} end of service include{% endcomment %}
+
+    <!-- Portfolio Area -->
+    <section class="portfolio-area">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
+                    <div class="section-title">
+                        <h6>Template</h6>
+                        <h3> Templates</h3>
+                        <div class="line-bot"></div>
+                        <p>Checkout some of our great templates and get started by creating your own website.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <!-- Project Nav -->
+                    <ul id="portfolio-nav" class="project-nav tr-list list-inline cbp-l-filters-work">
+                        <li data-filter="*" class="cbp-filter-item active">All</li>
+                        {% for item in tag_choice %}
+                            <li data-filter=".{{ item|first|slugify }}" class="cbp-filter-item">{{ item|first }}</li>
+                        {% endfor %}
+
+                    </ul>
+                    <!-- End-Project Nav -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="portfolio-main">
+                        <div id="portfolio-item" class="portfolio-item-active">
+                            {% for item in portfolio_template %}
+                                <!-- Single Portfolio -->
+                                <div class="cbp-item {{ item.tag|slugify }} branding">
+                                    <div class="portfolio-single">
+                                        <div class="portfolio-img">
+                                            <img src="{{ item.imageURL }}" alt="#" style="max-height: 40vh;">
+                                        </div>
+                                        <div class="portfolio-content">
+                                            {% comment %}Todo detail url {% endcomment %}
+                                            <h4><a href="#">{{ item.name|title }}</a></h4>
+                                            <p>{{ item.tag|title }}</p>
+                                        </div>
+                                        <a class="p-button" href="{{ item.imageURL }}"
+                                           data-fancybox="photo"><i
+                                                class="fa fa-image"></i></a>
+                                    </div>
+                                </div>
+                                <!-- End Single Portfolio -->
+                            {% endfor %}
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Portfolio Area -->
+
+
+    {% comment %} testimonial sectio{% endcomment %}
+    {% include 'HomePage/include/testimonial_include.html' %}
+    {% comment %}end  testimonial sectio{% endcomment %}
+
+
+
+    {% comment %} pricing start{% endcomment %}
+    {% include 'HomePage/include/pricing_include.html' %}
+    {% comment %}end pricing start{% endcomment %}
+
+    <!-- CTA Section -->
+    <section class="cta-section" style="background-image:url({% static 'HomePage/img/next-bg.jpg' %})">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-12">
+                    <div class="cta-content">
+                        <h3>Build your Perfect Website Now!</h3>
+                        <p>If you want to create a new website for your business, do not hesitate to contact us today.
+                            We have have provided all types of services on the website.</p>
+                        <div class="cta-button">
+                            <a href="{% url 'home_page:contact' %}" class="theme-btn">Get started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End CTA Section -->
+
+    <!-- Fun Fact -->
+    <div class="fun-fact">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="count-box">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-12">
+                                <!-- Single count -->
+                                <div class="single-count">
+                                    <i class="fa fa-globe"></i>
+                                    <div class="main-count">
+                                        <h3>Countries</h3>
+                                        <h6><span class="counter">50</span>+</h6>
+                                    </div>
+                                </div>
+                                <!-- End Single count -->
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-12">
+                                <!-- Single count -->
+                                <div class="single-count">
+                                    <i class="fa fa-user-circle"></i>
+                                    <div class="main-count">
+                                        <h3>Customers</h3>
+                                        <h6><span class="counter">50</span>+</h6>
+                                    </div>
+                                </div>
+                                <!-- End Single count -->
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-12">
+                                <!-- Single count -->
+                                <div class="single-count">
+                                    <i class="fa fa-briefcase"></i>
+                                    <div class="main-count">
+                                        <h3>Testimonials </h3>
+                                        <h6><span class="counter">{{ home_page_testimonial.count }}</span>+</h6>
+                                    </div>
+                                </div>
+                                <!-- End Single count -->
+                            </div>
+                            {% comment %}  <div class="col-lg-3 col-md-3 col-12">
+                                <!-- Single count -->
+                                <div class="single-count last">
+                                    <i class="fa fa-headphones"></i>
+                                    <div class="main-count">
+                                        <h3>Services</h3>
+                                        <h6><span class="counter">20</span>+</h6>
+                                    </div>
+                                </div>
+                                <!-- End Single count -->
+                            </div>{% endcomment %}
+                            <!-- End-Single-Count -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Fun Fact -->
+
+    <!-- Blog-Area -->
+    <section class="blog-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
+                    <div class="section-title">
+                        <h6>Blog</h6>
+                        <h3>latest Articles</h3>
+                        <div class="line-bot"></div>
+                        <p>...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 wow fadeInUp" data-wow-duration="1s">
+                    <div class="blog-slider">
+                        {% for post in latest_posts %}
+                            <!-- Single Blog -->
+
+                            <div class="single-blog" style="height: 40vh">
+
+                                <div class="blog-img">
+                                    <a href="{% url 'blog:blog_detail' post.slug %}">
+                                        <img src="{{ post.imageURL }}" alt="#" width="510" height="380">
+                                        <span class="date">{{ post.timestamp|date }}</span> </a>
+                                </div>
+
+                                <div class="blog-body">
+                                    <h3><a href="{% url 'blog:blog_detail' post.slug %}">{{ post.title|title }}</a>
+                                    </h3>
+                                    <div class="blog-meta">
+                                        <div class="single-meta">
+                                            <img src="{{ post.user.layout.profilePicsImageURL }}" alt="">
+                                            <p> {{ post.user.first_name }}</p>
+                                        </div>
+                                        <div class="single-meta">
+                                            <p><i class="fa fa-comments"></i>
+                                                <span>{{ post.comments.count }} comments</span></p>
+                                        </div>
+                                        <div class="single-meta">
+                                            <p><i class="fa fa-star"></i> <span>{{ post.view_count }}</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- End Single Blog -->
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End-Blog-Area -->
+
+    {% comment %} begin contact{% endcomment %}
+    {% include 'HomePage/include/contact_include.html' %}
+    {% comment %} end conatct{% endcomment %}
+
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

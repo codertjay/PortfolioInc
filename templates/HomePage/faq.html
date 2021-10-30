@@ -1,0 +1,460 @@
+{% extends 'HomePage/base/home_base.html' %}
+{% load static %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block title %}
+    Faq
+{% endblock %}
+{% block faq %}  {% endblock  %}
+{% block content %}
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs" style="background-image:url({% static 'HomePage/img/breadcrumbs.jpg' %})">
+        <div class="container">
+            <div class="row">
+                <!-- Breadcrumbs-Content -->
+                <div class="col-lg-7 col-md-7 col-12">
+                    <div class="breadcrumbs-content">
+                        <h2>Faq Area</h2>
+                        <p>Need answers to your question </p>
+                    </div>
+                </div>
+                <!-- Breadcrumbs-Menu -->
+                <div class="col-lg-5 col-md-5 col-12">
+                    <div class="breadcrumbs-menu">
+                        <ul>
+                            <li><a href="{% url 'home_page:home' %}">Home</a><i class="fa fa-angle-double-right"></i>
+                            </li>
+                            <li class="active"><a href="#">faq</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    <!-- Faq Area -->
+    <section class="faq-box-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
+                    <div class="section-title">
+                        <h6>Faq</h6>
+                        <h3>How Can We Help You?</h3>
+                        <div class="line-bot"></div>
+                        <p>All the lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary,
+                            making this the first true generator on the Internet.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-duration="1s">
+                    <!-- Single Faq -->
+                    <div class="single-faq-box active">
+                        <i class="fa fa-question-circle"></i>
+                        <p>Generals</p>
+                    </div>
+                    <!-- End Single Faq -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-duration="2s">
+                    <!-- Single Faq -->
+                    <div class="single-faq-box">
+                        <i class="fa fa-bug"></i>
+                        <p>Packages</p>
+                    </div>
+                    <!-- End Single Faq -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-duration="3s">
+                    <!-- Single Faq -->
+                    <div class="single-faq-box">
+                        <i class="fa fa-list-alt"></i>
+                        <p>Supports</p>
+                    </div>
+                    <!-- End Single Faq -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-duration="4s">
+                    <!-- Single Faq -->
+                    <div class="single-faq-box">
+                        <i class="fa fa-info-circle"></i>
+                        <p>Consultation</p>
+                    </div>
+                    <!-- End Single Faq -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Faq Area -->
+
+    <!-- Faq Main -->
+    <section class="faq-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
+                    <div class="section-title">
+                        <h6>Faq</h6>
+                        <h3>How Can We Help You?</h3>
+                        <div class="line-bot"></div>
+                        <p>All the lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary,
+                            making this the first true generator on the Internet.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-7 col-12 wow fadeInUp" data-wow-duration="1s">
+                    <!-- Faq Inner -->
+                    <div class="faq-inner">
+                        <div class="faq-content">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <!-- Single Faq -->
+                                <div class="panel panel-default">
+                                    <div class="faq-heading" id="FaqTitle1">
+                                        <h4 class="faq-title">
+                                            <a data-toggle="collapse" data-parent="#accordion"
+                                               href="#faq1"><span>1</span> Get the best from our awesome templates?</a>
+                                        </h4>
+                                    </div>
+                                    <div id="faq1" class="panel-collapse collapse show in" role="tabpanel"
+                                         aria-labelledby="FaqTitle1">
+                                        <div class="faq-body"><strong> {{ website_name }} is a web that
+                                            enable you
+                                            to create
+                                            your
+                                            portfolio without stress you dont need to pay
+                                            before getting you subdomain we provide you every thing you need as a
+                                            graphics designer. we
+                                            provide you with colors to pick and make your
+                                            web site more dynamic </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Faq -->
+
+                                <!-- Single Faq -->
+
+                                <div class="panel panel-default">
+                                    <div class="faq-heading" id="FaqTitle2">
+                                        <h4 class="faq-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                               href="#faq2"><span>2</span> How can update i update name and you
+                                                sub-domain?</a>
+                                        </h4>
+                                    </div>
+                                    <div id="faq2" class="panel-collapse collapse" role="tabpanel"
+                                         aria-labelledby="FaqTitle2">
+                                        <div class="faq-body"><h2>After creating your account </h2>
+                                            <p>
+                                                Click on this link <a href="{% url 'dashboard:dashboard' %}"><i
+                                                    class="fa fa-link"></i></a>
+                                                you can change your full name and your username <br>
+                                                <span style="font-size: 20px">note your username is used to create your subdomain </span>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Faq -->
+                                <!-- Single Faq -->
+                                <div class="panel panel-default">
+                                    <div class="faq-heading" id="FaqTitle3">
+                                        <h4 class="faq-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                               href="#faq3"><span>3</span>How to Update Profile?</a>
+                                        </h4>
+                                    </div>
+                                    <div id="faq3" class="panel-collapse collapse" role="tabpanel"
+                                         aria-labelledby="FaqTitle3">
+                                        <div class="faq-body"><p>
+                                            step 1, click on this link <a href="{% url 'profile:profileUpdate' %}"><i
+                                                class="fa fa-link"></i></a>
+                                            <br>
+                                            step 2, View changes and pick what suit you and note there are so many
+                                            things you
+                                            can
+                                            change in your profile
+                                            <br>
+                                            <p>
+                                                It contains
+                                                examples of the tings you can change in your profiles are
+                                                country,Portfolio
+                                                template,phone number ,website,Linkedin , twitter
+                                                and some other details , but mostly they are details which are about you
+                                            </p>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Single Faq -->
+                                <!-- Single Faq -->
+                                <div class="panel panel-default">
+                                    <div class="faq-heading" id="FaqTitle4">
+                                        <h4 class="faq-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                               href="#faq4"><span>4</span> How To Update Layout?</a>
+                                        </h4>
+                                    </div>
+                                    <div id="faq4" class="panel-collapse collapse" role="tabpanel"
+                                         aria-labelledby="FaqTitle4">
+                                        <div class="faq-body"><p>
+                                            step 1, click on this link <a href="{% url 'profile:layoutUpdate' %}"><i
+                                                class="fa fa-link"></i></a>
+                                            <br>
+                                            step 2, View changes and pick what suit you and note there are so many
+                                            things you
+                                            can
+                                            change in your layout
+                                            <br>
+                                            <p>
+                                                It contains background which could be dark or light , primary color
+                                                which is used
+                                                for the extra background color, secondary color which is the text color
+                                                in some
+                                                part, profile image ( your image ), background image ( an extra image )
+                                                , logo and
+                                                some other important design in the form details
+                                            </p>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="faq-heading" id="FaqTitle5">
+                                        <h4 class="faq-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                               href="#faq5"><span>5</span> How to create and update skills?</a>
+                                        </h4>
+                                    </div>
+                                    <div id="faq5" class="panel-collapse collapse" role="tabpanel"
+                                         aria-labelledby="FaqTitle4">
+                                        <div class="faq-body">
+                                            <div>
+                                                <h3> Creating Skill </h3>
+                                                <p>
+                                                    click on this link <a href="{% url 'skill:skillUpdate' %}"><i
+                                                        class="fa fa-link"></i></a>
+                                                    <br>
+                                                <p>
+                                                    step 1, fill in the form which contains your
+                                                    skill name, <br>icon of the skill <br> Percent ( how good you are
+                                                    with the skill
+                                                    )<br> the
+                                                    details of the skill
+                                                    step 2, click on the button create
+
+                                                </p>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <h3> Update Skill </h3>
+                                                <p>
+                                                    click on this link <a
+                                                        href="{% url 'testimonial:testimonialUpdate' %}"><i
+                                                        class="fa fa-link"></i></a>
+                                                    <br>
+                                                <p>
+                                                    step 1, once you are on the same page
+                                                    <br>
+                                                    step 2, view the skill you want to update on a table
+                                                    <br>
+                                                    step 3, click on the update button a dialog will display fill in the
+                                                    form then
+                                                    update and you can also delete the form
+                                                </p>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="faq-heading" id="FaqTitle6">
+                                        <h4 class="faq-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                               href="#faq6"><span>6</span> How to creating and update service?</a>
+                                        </h4>
+                                    </div>
+                                    <div id="faq6" class="panel-collapse collapse" role="tabpanel"
+                                         aria-labelledby="FaqTitle6">
+                                        <div class="faq-body">
+                                            <div>
+                                                <h3> Creating Service </h3>
+                                                <p>
+                                                    click on this link <a href="{% url 'service:serviceUpdate' %}"><i
+                                                        class="fa fa-link"></i></a>
+                                                    <br>
+                                                <p>
+                                                    step 1, fill in the form which contains your
+                                                    service name, <br>image of the service <br> the
+                                                    details of the service
+                                                    step 2, click on the button create
+
+                                                </p>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <h3><strong> Update Service </strong></h3>
+                                                <p>
+                                                    click on this link <a href="{% url 'service:serviceUpdate' %}"><i
+                                                        class="fa fa-link"></i></a>
+                                                    <br>
+                                                <p>
+                                                    step 1, once you are on the same page
+                                                    <br>
+                                                    step 2, view the service you want to update on a table
+                                                    <br>
+                                                    step 3, click on the update button a dialog will display fill in the
+                                                    form then
+                                                    update and you can also delete the form
+                                                </p>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="faq-heading" id="FaqTitle7">
+                                        <h4 class="faq-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                               href="#faq7"><span>7</span>How to creating and update project?</a>
+                                        </h4>
+                                    </div>
+                                    <div id="faq7" class="panel-collapse collapse" role="tabpanel"
+                                         aria-labelledby="FaqTitle7">
+                                        <div class="faq-body">
+                                            <div>
+                                                <h3> Creating Project </h3>
+                                                <p>
+                                                    click on this link <a href="{% url 'project:projectUpdate' %}"><i
+                                                        class="fa fa-link"></i></a>
+                                                    <br>
+                                                <p>
+                                                    step 1, fill in the form which contains your
+                                                    project name, <br>image of the project (just for identification )
+                                                    <br> the
+                                                    details of the project
+                                                    step 2, click on the button create
+                                                    <strong> Note the project is just to identify your items which are
+                                                        under it
+                                                        example:
+                                                        <br> you can have a project that contains up to ten image under
+                                                        it
+                                                    </strong>
+
+                                                </p>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <h3><strong> Update Project </strong></h3>
+                                                <p>
+                                                    click on this link <a href="{% url 'project:projectUpdate' %}"><i
+                                                        class="fa fa-link"></i></a>
+                                                    <br>
+                                                <p>
+                                                    step 1, once you are on the same page
+                                                    <br>
+                                                    step 2, view the project you want to update on a table
+                                                    <br>
+                                                    step 3, click on the update button a dialog will display fill in the
+                                                    form then
+                                                    update and you can also delete the form
+                                                </p>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="faq-heading" id="FaqTitle8">
+                                        <h4 class="faq-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                               href="#faq8"><span>8</span>How to creating and update Items (project
+                                                item)?</a>
+                                        </h4>
+                                    </div>
+                                    <div id="faq8" class="panel-collapse collapse" role="tabpanel"
+                                         aria-labelledby="FaqTitle8">
+                                        <div class="faq-body">
+                                            <div>
+                                                <h3> Creating Project </h3>
+                                                <p>
+                                                    click on this link <a
+                                                        href="{% url 'project:projectItemUpdate' %}"><i
+                                                        class="fa fa-link"></i></a>
+                                                    <br>
+                                                <p>
+                                                    step 1, fill in the form which contains your
+                                                    item name, <br>image of the item ( very important ) <br> the
+                                                    details of the item
+                                                    step 2, click on the button create
+                                                    <strong> Note before creating your item you must create a project
+                                                        first which
+                                                        enable you to select the drop down and choose your project
+                                                    </strong>
+
+                                                </p>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <h3><strong> Update Item </strong></h3>
+                                                <p>
+                                                    click on this link <a
+                                                        href="{% url 'project:projectItemUpdate' %}"><i
+                                                        class="fa fa-link"></i></a>
+                                                    <br>
+                                                <p>
+                                                    step 1, once you are on the same page
+                                                    <br>
+                                                    step 2, view the item you want to update on a table
+                                                    <br>
+                                                    step 3, click on the update button a dialog will display fill in the
+                                                    form then
+                                                    update and you can also delete the form
+                                                </p>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="faq-heading" id="FaqTitle9">
+                                        <h4 class="faq-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                               href="#faq9"><span>9</span>How to write blog posts</a>
+                                        </h4>
+                                    </div>
+                                    <div id="faq9" class="panel-collapse collapse" role="tabpanel"
+                                         aria-labelledby="FaqTitle8">
+                                        <div class="faq-body">
+                                            <p>
+                                            <h3> Become a writer </h3>
+                                            <p>
+                                                {{ website_name }} enable you to become a writer for fun in which you
+                                                can advertise
+                                                tour self and your business
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /End Faq Inner -->
+                </div>
+                <div class="col-lg-5 col-12 wow fadeInRight" data-wow-duration="2s">
+                    <!-- Faq-Image -->
+                    <div class="faq-image">
+                        <img src="{% static 'HomePage/img/faq-img.png' %}" alt="#">
+                    </div>
+                    <!-- End-Faq-Image -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Faq Main -->
+{% endblock %}
+
+
+{% block script %}
+
+{% endblock %}

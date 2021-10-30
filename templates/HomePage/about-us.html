@@ -1,0 +1,175 @@
+{% extends 'HomePage/base/home_base.html' %}
+{% load static %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block title %}
+    About  || PortfolioINc
+{% endblock %}
+
+{% block about %} active {% endblock %}
+{% block content %}
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs" style="background-image:url({% static  'HomePage/img/breadcrumbs.jpg' %})">
+        <div class="container">
+            <div class="row">
+                <!-- Breadcrumbs-Content -->
+                <div class="col-lg-7 col-md-7 col-12">
+                    <div class="breadcrumbs-content">
+                        <h2>About Us</h2>
+                        <p>{{ website_name }} is all about creating portfolio for designers and developers without
+                            taking much time by choosing what suit you.</p>
+                    </div>
+                </div>
+                <!-- Breadcrumbs-Menu -->
+                <div class="col-lg-5 col-md-5 col-12">
+                    <div class="breadcrumbs-menu">
+                        <ul>
+                            <li><a href="{% url 'home_page:home' %}">Home</a><i class="fa fa-angle-double-right"></i>
+                            </li>
+                            <li class="active"><a href="#">About us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+
+    {% comment %} about include{% endcomment %}
+    {% include 'HomePage/include/about_include.html' %}
+    {% comment %} end of about include{% endcomment %}
+
+    {% comment %}
+    <!-- Team Area -->
+    <section class="team-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
+                    <div class="section-title">
+                        <h6>Team</h6>
+                        <h3>Creative Minds</h3>
+                        <div class="line-bot"></div>
+                        <p>All the lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary,
+                            making this the first true generator on the Internet.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-duration="1s">
+                    <!-- Single Team -->
+                    <div class="single-team text-center">
+                        <div class="team-img">
+                            <img src="{% static 'HomePage/img/team/1.jpg' %}" alt="#">
+                        </div>
+                        <div class="team-bottom">
+                            <!-- Team content -->
+                            <div class="team-content">
+                                <h4>Sam Martin</h4>
+                                <p>Web Designer</p>
+                            </div>
+                            <!-- Team social -->
+                            <div class="team-social">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Team -->
+                </div>
+                <!-- Single-Team -->
+                <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-duration="2s">
+                    <!-- Single Team -->
+                    <div class="single-team text-center">
+                        <div class="team-img">
+                            <img src="{% static 'HomePage/img/team/2.jpg' %}" alt="#">
+                        </div>
+                        <div class="team-bottom">
+                            <!-- Team content -->
+                            <div class="team-content">
+                                <h4>Johnny Doe</h4>
+                                <p>Ceo, Developer</p>
+                            </div>
+                            <!-- Team social -->
+                            <div class="team-social">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Team -->
+                </div>
+                <!-- Single-Team -->
+                <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-duration="3s">
+                    <!-- Single Team -->
+                    <div class="single-team text-center">
+                        <div class="team-img">
+                            <img src="{% static 'HomePage/img/team/3.jpg' %}" alt="#">
+                        </div>
+                        <div class="team-bottom">
+                            <!-- Team content -->
+                            <div class="team-content">
+                                <h4>Alex Smith</h4>
+                                <p>Founder, Director</p>
+                            </div>
+                            <!-- Team social -->
+                            <div class="team-social">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Team -->
+                </div>
+                <!-- Single-Team -->
+                <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-duration="4s">
+                    <!-- Single Team -->
+                    <div class="single-team text-center">
+                        <div class="team-img">
+                            <img src="{% static 'HomePage/img/team/4.jpg' %}" alt="#">
+                        </div>
+                        <div class="team-bottom">
+                            <!-- Team content -->
+                            <div class="team-content">
+                                <h4>Anamika Dome</h4>
+                                <p>Digital Marketer</p>
+                            </div>
+                            <!-- Team social -->
+                            <div class="team-social">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Team -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Team Area -->
+{% endcomment %}
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

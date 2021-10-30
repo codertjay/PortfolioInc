@@ -1,0 +1,148 @@
+{% load static %}
+
+<!-- Pricing Area -->
+<section class="pricing-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-12">
+                <div class="section-title">
+                    <h6>pricing</h6>
+                    <h3>See Pricing Plans</h3>
+                    <div class="line-bot"></div>
+                    <p>We provide you with the best pricing plan for your business .</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-duration="1s">
+                {% if Free %}
+                    <!-- Single Pricing -->
+                    <div class="single-pricing" style="min-height: 540px">
+                        <div class="pricing-head">
+                            <h4>Free</h4>
+                        </div>
+                        <div class="pricing-middle">
+                            <div class="circle-box">
+                                <div class="price">
+                                    <h2>${{ Free.price_usd }}</h2>
+                                </div>
+                            </div>
+                            <ul class="price-list">
+                                <li>Social Media Marketing</li>
+                                <li>Free SEO</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+                <!-- End Single Pricing -->
+            </div>
+            <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-duration="2s">
+                <!-- Single Pricing -->
+                {% if Standard %}
+                    <div class="single-pricing active">
+                        <div class="pricing-head">
+                            <h4>Standard</h4>
+                            <div class="sticker">
+                                <span>Best plan</span>
+                            </div>
+                        </div>
+                        <div class="pricing-middle">
+                            <div class="circle-box">
+                                <div class="price">
+                                    <h2>${{ Standard.price_usd }}</h2>
+                                    <p>Monthly</p>
+                                </div>
+                            </div>
+                            <ul class="price-list">
+                                <li>Social Media Marketing</li>
+                                <li>Free SEO</li>
+                                <li>Advertising To Potential Client's</li>
+                                <li>Getting Potential Clients</li>
+                                <li>Access To All Templates</li>
+                                <li>No Ads</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-bottom">
+                            <a href="{% url 'membership:payment_progress' Standard.membership_type %}"
+                               class="theme-btn primary"><i class="fa fa-shopping-cart"></i>Order
+                                now</a>
+                        </div>
+                    </div>
+                {% endif %}
+                <!-- End Single Pricing -->
+
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-duration="2s">
+
+                <!-- Single Pricing -->
+                {% if Premium %}
+                    <div class="single-pricing">
+                        <div class="pricing-head">
+                            <h4>Premium</h4>
+                        </div>
+                        <div class="pricing-middle">
+                            <div class="circle-box">
+                                <div class="price">
+                                    <h2>${{ Premium.price_usd }}</h2>
+                                    <p>Quaterly</p>
+                                </div>
+                            </div>
+                            <ul class="price-list">
+                                <li>Social Media Marketing</li>
+                                <li>Free SEO</li>
+                                <li>Advertising To Potential Client's</li>
+                                <li>Getting Potential Clients</li>
+                                <li>Access To All Templates</li>
+                                <li>No Ads</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-bottom">
+                            <a href="{% url 'membership:payment_progress' Premium.membership_type %}"
+                               class="theme-btn primary"><i class="fa fa-shopping-cart"></i>Order
+                                now</a>
+                        </div>
+                    </div>
+                {% endif %}
+                <!-- End Single Pricing -->
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-12 wow fadeInUp" data-wow-duration="2s">
+                <!-- Single Pricing -->
+                {% if Professional %}
+                    <div class="single-pricing">
+                        <div class="pricing-head">
+                            <h4>Professional</h4>
+                        </div>
+                        <div class="pricing-middle">
+                            <div class="circle-box">
+                                <div class="price">
+                                    <h2>${{ Professional.price_usd }}</h2>
+                                    <p>Yearly</p>
+                                </div>
+                            </div>
+                            <ul class="price-list">
+                                <li>Social Media Marketing</li>
+                                <li>Free SEO</li>
+                                <li>Advertising To Potential Client's</li>
+                                <li>Getting Potential Clients</li>
+                                <li>Access To All Templates</li>
+                                <li>No Ads</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-bottom">
+
+                            <a href="{% url 'membership:payment_progress' Professional.membership_type %}"
+                               class="theme-btn primary"><i class="fa fa-shopping-cart"></i>Order
+                                now</a>
+                        </div>
+                    </div>
+                {% endif %}
+                <!-- End Single Pricing -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Pricing Area -->
+

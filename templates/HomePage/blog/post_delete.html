@@ -1,0 +1,40 @@
+{% extends 'HomePage/base/home_base.html' %}
+
+{% block style %}
+    <style>
+        .card {
+            box-shadow: 15px 15px 10px rgba(0, 0, 0, .095) !important;
+
+        }
+    </style>
+{% endblock %}
+{% block content %}
+
+    <div class="section-grey">
+        <div class="container" style="height: 40vh">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="text-center">
+                        Are you sure you wants delete <strong> {{ post.title }}</strong> ?
+                    </h3>
+                    <div class="col-4 text-center  mt-5 " >
+                        <div class="card ml-5 d-flex align-self-center" style="min-width: 50vw;">
+                            <div class="card-content  p-5 d-flex justify-content-center align-content-center " >
+                                    <form action=".." method="post">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                    <a href="{% url 'blog:blog_detail' post.slug %}">
+                                        <button class="btn btn-outline-primary">Go back</button>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
